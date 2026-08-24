@@ -5,107 +5,65 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>HydroSleep — Privacy Policy</title>
   <style>
-    body {
-      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
-      max-width: 720px;
-      margin: 40px auto;
-      padding: 0 24px 60px;
-      color: #1a1a1a;
-      line-height: 1.7;
-      font-size: 16px;
-    }
-    h1 { font-size: 1.8rem; margin-bottom: 4px; }
-    h2 { font-size: 1.1rem; margin-top: 2em; color: #333; }
-    .updated { color: #888; font-size: 0.9rem; margin-bottom: 2em; }
-    a { color: #0070f3; }
-    ul { padding-left: 1.4em; }
-    li { margin-bottom: 0.4em; }
-    .highlight {
-      background: #f0f7ff;
-      border-left: 4px solid #0070f3;
-      padding: 12px 16px;
-      border-radius: 4px;
-      margin: 1.5em 0;
-    }
+    body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; max-width: 760px; margin: 40px auto; padding: 0 24px 60px; color: #172033; line-height: 1.65; font-size: 16px; }
+    h1 { font-size: 1.9rem; margin-bottom: 4px; } h2 { font-size: 1.15rem; margin-top: 2em; }
+    .updated { color: #667085; font-size: .9rem; margin-bottom: 2em; }
+    .highlight { background: #eef8f7; border-left: 4px solid #36a99f; padding: 14px 16px; border-radius: 5px; margin: 1.5em 0; }
+    a { color: #315bc8; } li { margin-bottom: .45em; } code { overflow-wrap: anywhere; }
   </style>
 </head>
 <body>
-
   <h1>HydroSleep — Privacy Policy</h1>
-  <p class="updated">Last updated: June 10, 2026</p>
+  <p class="updated">Last updated: August 24, 2026</p>
 
-  <div class="highlight">
-    <strong>The short version:</strong> HydroSleep collects no data. Everything you enter stays on your device. We have no servers, no accounts, and no access to your information.
-  </div>
+  <div class="highlight"><strong>In short:</strong> HydroSleep is offline-first. Care records stay on your device unless you choose family cloud sync, your own NAS, an export, Health Connect, voice recognition, or notifications. Optional product diagnostics are off until you explicitly enable them. If you buy the optional Plus upgrade, only the purchase itself is processed by Google Play and RevenueCat &mdash; never your care data.</div>
 
-  <h2>1. Who we are</h2>
-  <p>HydroSleep is a personal Android application developed by Filip Kugler (<a href="mailto:filipkugler@gmail.com">filipkugler@gmail.com</a>). It is available on the Google Play Store for a one-time purchase of $0.99 with no subscriptions or in-app purchases.</p>
+  <h2>1. Controller and contact</h2>
+  <p>HydroSleep is developed and operated by <strong>Ing. Filip Kugler</strong>, a self-employed trader registered in the Czech Republic, company ID (I&Ccaron;O) <strong>07117485</strong>, place of business <strong>Prague, Czech Republic</strong>. Ing. Filip Kugler is the controller of the personal data described in this policy. Privacy questions and requests can be sent to <a href="mailto:hydrosleep.support@gmail.com">hydrosleep.support@gmail.com</a>.</p>
 
-  <h2>2. Data storage — on your device only</h2>
-  <p>All data you enter in HydroSleep — including sleep records, hydration logs, temperature measurements, medication entries, growth measurements, vaccination records, milestones, and child profiles — is stored exclusively in the local storage (<code>AsyncStorage</code>) of your Android device.</p>
-  <p>We do <strong>not</strong>:</p>
+  <h2>2. Data stored on your device</h2>
+  <p>The app can store child and caregiver profiles, sleep, feeding and hydration, diapers, temperature, medication, growth, teeth, vaccinations, milestones, development checklists, calendar items, photos, reports, journal entries, reminders, preferences and sync state. These are stored in app-private storage on your device. NAS credentials are stored with Android Keystore-backed secure storage.</p>
+
+  <h2>3. Optional family cloud sync</h2>
+  <p>If you enable Family sync, the app creates an anonymous Supabase authentication identity and uploads the shared family profile and supported care records to the HydroSleep Supabase project. Family members with the invitation code can access the shared family. Caregiver display names and technical timestamps are also stored so the app can show who logged an item and synchronize changes.</p>
+  <p>Family sync does not currently require an email address. Because an anonymous identity is tied to the app installation, uninstalling or clearing app storage can remove access from that device unless another family member can issue a new invitation. Leaving a family removes the local membership but may not delete the shared family data. Contact us for a cloud-data deletion request.</p>
+
+  <h2>4. Optional private NAS sync and exports</h2>
+  <p>If you configure WebDAV/NAS sync, selected records, media and device push-token files are sent directly to the HTTPS server address you provide. That server is controlled by you, not HydroSleep. JSON, CSV and PDF exports are created only when you request them and can be shared through Android to a destination you choose.</p>
+
+  <h2>5. Notifications and Expo</h2>
+  <p>Local reminders are scheduled on your device after you grant notification permission. Family alerts can use an Expo push token and Expo's push delivery infrastructure. Notification text may include a child or caregiver display name and a short event label. You can disable all notifications or individual categories in HydroSleep Settings and revoke the system permission in Android Settings.</p>
+
+  <h2>6. Optional integrations</h2>
   <ul>
-    <li>collect or transmit any personal data to our servers (we have none)</li>
-    <li>require account registration or login</li>
-    <li>use any analytics, crash-reporting, or tracking SDKs</li>
-    <li>show advertisements</li>
-    <li>sell or share your data with any third party</li>
+    <li><strong>Photos:</strong> selected media is copied to app-private storage and may be included in a NAS sync or user-created backup.</li>
+    <li><strong>Voice logging:</strong> Android's selected speech-recognition service processes microphone input when you start voice entry. Its handling depends on the speech service configured on your device.</li>
+    <li><strong>Health Connect:</strong> with your explicit Android permission, parent hydration entries can be written to Health Connect. HydroSleep does not read unrelated Health Connect records.</li>
   </ul>
 
-  <h2>3. Optional NAS synchronisation</h2>
-  <p>HydroSleep includes an optional sync feature that allows you to back up your data to a NAS (Network-Attached Storage) device you own and control, via the WebDAV protocol. This feature:</p>
-  <ul>
-    <li>is entirely opt-in and requires you to configure your own server address and credentials</li>
-    <li>only communicates with the server address you provide — typically on your home local network</li>
-    <li>never routes data through any third-party server or cloud service operated by us</li>
-  </ul>
-  <p>The NAS credentials you enter are stored locally on your device and are never transmitted to us.</p>
+  <h2>7. Optional product diagnostics</h2>
+  <p>“Help improve HydroSleep” is disabled by default. If enabled, the app may send a random app-install identifier, app version, platform, language, allow-listed feature events and scrubbed crash text to our Supabase endpoint. The server hashes the random identifier before storage. The payload excludes child and family identifiers, names, care values, medication details, notes, photos and advertising identifiers. Disabling the setting clears unsent diagnostic queues and stops future collection.</p>
 
-  <h2>4. Push notifications</h2>
-  <p>HydroSleep uses Expo's push notification service to send real-time alerts between two family devices (e.g. when a child falls asleep or wakes up). If you enable this feature:</p>
-  <ul>
-    <li>A push token is generated by the Expo SDK on your device and stored on your own NAS (not on any server operated by us).</li>
-    <li>Notification payloads contain only brief event labels (e.g. child name + "fell asleep") and carry no health data.</li>
-    <li>Expo's push infrastructure is operated by Expo (expo.dev) under their own privacy policy.</li>
-  </ul>
-  <p>You can disable push notifications at any time in your Android system settings.</p>
+  <h2>8. Purchases and subscriptions</h2>
+  <p>HydroSleep is free to install. If you buy the optional <strong>HydroSleep Plus</strong> upgrade, the purchase is processed by <strong>Google Play Billing</strong>, and we use <strong>RevenueCat</strong> to verify the receipt and to tell the app whether your Plus entitlement is currently active.</p>
+  <p>For that purpose the app creates a <strong>random purchase identifier</strong> that is not derived from your name, email or Google account, and RevenueCat receives it together with the Google Play purchase token, the product and plan you bought, the purchase, renewal and expiry timestamps, the store country, and technical values such as app version and platform. Google Play additionally provides RevenueCat with the status of the transaction so that renewals, cancellations, refunds and billing problems are reflected in the app.</p>
+  <p><strong>HydroSleep never receives your card number, bank details or any other payment instrument.</strong> Those are handled by Google inside the Play checkout. No care data — no child or caregiver names, sleep, feeding, health, growth, photos, notes or journal entries — is ever sent to RevenueCat or attached to a purchase.</p>
+  <p>The last confirmed entitlement status is also cached on your device so that Plus keeps working when the app has no network connection. Clearing app storage removes that cache; the entitlement itself can be restored from Google Play.</p>
+  <p>If you never make a purchase, the billing service is not contacted and no purchase identifier is created.</p>
 
-  <h2>5. Photos</h2>
-  <p>If you add a child profile photo, the image is stored solely in the local storage of your device (and optionally synced to your own NAS as described above). No photos are uploaded to any server operated by us.</p>
+  <h2>9. Service providers</h2>
+  <p>Depending on features you choose, HydroSleep uses Expo (app and push infrastructure), Supabase (family sync and opted-in diagnostics), Google Play Billing and RevenueCat (purchase processing and subscription status), Android/Google Health Connect, your selected Android speech-recognition provider, your own NAS provider, and apps you select from the Android share sheet. Their own terms and privacy notices apply to their processing.</p>
 
-  <h2>6. Children's data</h2>
-  <p>HydroSleep is designed to track data about infants and young children. All such data is stored locally on the parent's device and is never accessible to us or any third party.</p>
+  <h2>10. Retention and deletion</h2>
+  <p>Purchase records are retained by Google Play and RevenueCat for as long as needed to service the subscription and to meet accounting and tax obligations. Local care data remains until you delete records, clear HydroSleep's Android app storage, or uninstall the app. Files exported outside the app and copies on your NAS must be deleted at their destination. Diagnostic events and scrubbed crash reports are retained only as long as needed to measure reliability and product use, normally no more than 24 months. Family cloud data is retained while the shared family exists or until a valid deletion request is completed.</p>
 
-  <h2>7. Permissions</h2>
-  <p>The app may request the following Android permissions:</p>
-  <ul>
-    <li><strong>POST_NOTIFICATIONS</strong> — to send local and push notifications (sleep timers, hydration reminders, partner alerts)</li>
-    <li><strong>INTERNET</strong> — solely for NAS synchronisation and Expo push notifications; no other network calls are made</li>
-    <li><strong>READ_EXTERNAL_STORAGE / WRITE_EXTERNAL_STORAGE</strong> — on older Android versions, for saving exported PDF reports to your device</li>
-    <li><strong>READ_MEDIA_IMAGES</strong> — for selecting a child profile photo from your gallery</li>
-  </ul>
+  <h2>11. Children, security and medical data</h2>
+  <p>HydroSleep is intended for use by adult caregivers, not directly by children. Care data can be sensitive. We use app-private device storage, HTTPS-only network configuration, row-level access controls for family sync, secure credential storage and data minimization. No system is completely secure, so protect your device, family code and NAS credentials.</p>
 
-  <h2>8. Data deletion</h2>
-  <p>You can delete all app data at any time by:</p>
-  <ul>
-    <li>Using the "Backup &amp; Restore" section in the app's Settings to clear local data</li>
-    <li>Uninstalling the app (this removes all locally stored data)</li>
-    <li>Manually deleting files from your NAS if you used the sync feature</li>
-  </ul>
-  <p>Because we never receive your data, there is nothing to request deletion of from our side.</p>
+  <h2>12. Your choices</h2>
+  <p>You can use core logging without family sync, NAS, Health Connect, voice recognition, notifications or diagnostics. My Data &amp; Reports provides a free machine-readable export of all supported data available in the app; the same full backup remains available from Settings. You may also request access, portability, correction, restriction or deletion of personal data controlled by us by using the contact above. These privacy requests are handled free of charge unless applicable law permits a reasonable fee for a manifestly unfounded, excessive or repeated request.</p>
 
-  <h2>9. Third-party services</h2>
-  <p>HydroSleep uses the following third-party SDKs or services, solely as described above:</p>
-  <ul>
-    <li><a href="https://expo.dev/privacy" target="_blank" rel="noopener">Expo</a> — app framework and push notification delivery</li>
-  </ul>
-  <p>No other analytics, advertising, or data-sharing SDKs are included.</p>
-
-  <h2>10. Changes to this policy</h2>
-  <p>If the privacy practices of HydroSleep change materially, this page will be updated and the "Last updated" date will be revised. Given the nature of the app (no data collection), significant changes are unlikely.</p>
-
-  <h2>11. Contact</h2>
-  <p>Questions about this policy can be sent to <a href="mailto:filipkugler@gmail.com">filipkugler@gmail.com</a>.</p>
-
+  <h2>13. Changes</h2>
+  <p>We may update this policy as HydroSleep changes. The date above will be revised for material updates.</p>
 </body>
 </html>
